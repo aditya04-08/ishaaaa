@@ -1,0 +1,1418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>FOR ISHA 💖</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;700&display=swap" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<style>
+
+:root{
+--pink:#ffb6d9;
+--sky:#87cefa;
+--gold:#ffd84d;
+--dark:#5b3b00;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+min-height:100vh;
+overflow-x:hidden;
+font-family:'Poppins',sans-serif;
+
+background:
+linear-gradient(
+180deg,
+#fff8df 0%,
+#ffe27a 45%,
+#ffbf47 100%
+);
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+padding:30px 15px;
+position:relative;
+}
+
+/* SKY */
+
+.sky{
+position:fixed;
+inset:0;
+overflow:hidden;
+z-index:0;
+pointer-events:none;
+}
+
+/* SUN */
+
+.sun{
+position:absolute;
+top:70px;
+right:60px;
+
+width:170px;
+height:170px;
+
+border-radius:50%;
+
+background:
+radial-gradient(circle,#fff9d1,#ffd84d,#ffb300);
+
+box-shadow:
+0 0 60px rgba(255,216,77,.8),
+0 0 120px rgba(255,216,77,.45);
+
+animation:sunPulse 5s ease-in-out infinite;
+}
+
+@keyframes sunPulse{
+50%{
+transform:scale(1.08);
+}
+}
+
+/* CLOUDS */
+
+.cloud{
+position:absolute;
+background:rgba(255,255,255,.82);
+border-radius:100px;
+filter:blur(2px);
+}
+
+.cloud::before,
+.cloud::after{
+content:'';
+position:absolute;
+background:rgba(255,255,255,.82);
+border-radius:50%;
+}
+
+.cloud1{
+width:240px;
+height:70px;
+top:10%;
+left:-250px;
+animation:moveCloud 45s linear infinite;
+}
+
+.cloud1::before{
+width:100px;
+height:100px;
+left:30px;
+top:-40px;
+}
+
+.cloud1::after{
+width:120px;
+height:120px;
+right:25px;
+top:-50px;
+}
+
+.cloud2{
+width:180px;
+height:60px;
+top:35%;
+left:-220px;
+animation:moveCloud 55s linear infinite;
+animation-delay:5s;
+}
+
+.cloud2::before{
+width:80px;
+height:80px;
+left:20px;
+top:-30px;
+}
+
+.cloud2::after{
+width:100px;
+height:100px;
+right:20px;
+top:-40px;
+}
+
+.cloud3{
+width:260px;
+height:75px;
+top:65%;
+left:-300px;
+animation:moveCloud 70s linear infinite;
+animation-delay:10s;
+}
+
+.cloud3::before{
+width:110px;
+height:110px;
+left:25px;
+top:-40px;
+}
+
+.cloud3::after{
+width:130px;
+height:130px;
+right:30px;
+top:-55px;
+}
+
+@keyframes moveCloud{
+from{
+transform:translateX(0);
+}
+to{
+transform:translateX(150vw);
+}
+}
+
+/* PARTICLES */
+
+.particles{
+position:fixed;
+inset:0;
+overflow:hidden;
+z-index:0;
+pointer-events:none;
+}
+
+.spark{
+position:absolute;
+animation:floatUp 7s linear infinite;
+opacity:.9;
+}
+
+@keyframes floatUp{
+0%{
+transform:translateY(100vh) scale(0);
+opacity:0;
+}
+
+15%{
+opacity:1;
+}
+
+100%{
+transform:translateY(-120vh) scale(1.4);
+opacity:0;
+}
+}
+
+/* APP */
+
+#app{
+width:100%;
+max-width:1200px;
+
+background:rgba(255,255,255,.18);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.35);
+
+border-radius:45px;
+
+padding:40px;
+
+position:relative;
+z-index:10;
+
+overflow:hidden;
+
+box-shadow:
+0 15px 45px rgba(0,0,0,.15),
+inset 0 0 40px rgba(255,255,255,.1);
+}
+
+.page{
+display:none;
+animation:fade .8s ease;
+}
+
+.active{
+display:block;
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(25px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* HERO */
+
+.hero{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:70px;
+}
+
+/* LEFT + RIGHT */
+
+.left,
+.right{
+flex:1;
+}
+
+.right{
+display:flex;
+justify-content:center;
+}
+
+/* TAG */
+
+.tag{
+display:inline-block;
+
+padding:14px 26px;
+
+border-radius:999px;
+
+background:rgba(255,255,255,.55);
+
+border:1px solid rgba(255,255,255,.85);
+
+backdrop-filter:blur(10px);
+
+color:#694500;
+
+font-size:1rem;
+font-weight:700;
+
+margin-bottom:24px;
+
+box-shadow:
+0 5px 15px rgba(0,0,0,.08);
+}
+
+/* HEADINGS */
+
+h1{
+font-family:'Dancing Script',cursive;
+font-size:5rem;
+line-height:1.05;
+
+color:#ffffff;
+
+margin-bottom:20px;
+
+text-shadow:
+0 5px 18px rgba(0,0,0,.45),
+0 0 10px rgba(255,255,255,.55);
+}
+
+/* TEXT */
+
+p{
+font-size:1.15rem;
+line-height:1.9;
+font-weight:600;
+
+color:#5b3b00;
+
+text-shadow:
+0 1px 3px rgba(255,255,255,.4);
+
+margin-bottom:14px;
+}
+
+/* MARATHI */
+
+.marathi{
+font-family:'Noto Sans Devanagari',sans-serif;
+font-weight:700;
+margin-bottom:18px;
+line-height:1.8;
+
+font-size:1.2rem;
+
+color:#ffffff;
+
+text-shadow:
+0 2px 10px rgba(0,0,0,.4);
+}
+
+/* QUOTE */
+
+.quote-box{
+margin-top:22px;
+
+padding:22px;
+
+border-radius:28px;
+
+background:rgba(120,80,0,.20);
+
+border:1px solid rgba(255,255,255,.35);
+
+backdrop-filter:blur(10px);
+
+line-height:1.9;
+
+color:#ffffff;
+
+font-size:1.05rem;
+font-weight:600;
+
+box-shadow:
+0 8px 20px rgba(0,0,0,.08);
+
+text-shadow:
+0 2px 8px rgba(0,0,0,.3);
+}
+
+/* IMAGE CARD */
+
+.imageCard{
+position:relative;
+
+width:100%;
+max-width:400px;
+
+padding:12px;
+
+border-radius:40px;
+
+background:
+linear-gradient(
+135deg,
+rgba(255,255,255,.35),
+rgba(255,255,255,.15)
+);
+
+border:1px solid rgba(255,255,255,.35);
+
+backdrop-filter:blur(18px);
+
+box-shadow:
+0 20px 40px rgba(0,0,0,.18);
+}
+
+/* IMAGES */
+
+.img{
+width:100%;
+height:500px;
+display:block;
+border-radius:30px;
+background:#fff;
+}
+
+.coverImg{
+object-fit:cover;
+}
+
+.fullImg{
+object-fit:contain;
+padding:10px;
+background:white;
+}
+
+/* FLOAT CARD */
+
+.floatCard{
+position:absolute;
+
+padding:16px 20px;
+
+border-radius:24px;
+
+background:rgba(255,255,255,.9);
+
+backdrop-filter:blur(15px);
+
+border:1px solid rgba(255,255,255,.7);
+
+color:#5b3b00;
+
+box-shadow:
+0 10px 20px rgba(0,0,0,.12);
+}
+
+.floatBottom{
+bottom:20px;
+right:-30px;
+}
+
+/* BUTTONS */
+
+.btnRow{
+display:flex;
+gap:16px;
+margin-top:30px;
+flex-wrap:wrap;
+}
+
+.firstBtnRow{
+justify-content:center;
+}
+
+.btn{
+padding:16px 32px;
+
+border:none;
+border-radius:999px;
+
+cursor:pointer;
+
+font-size:1rem;
+font-weight:700;
+
+transition:.35s;
+
+color:white;
+
+background:
+linear-gradient(
+135deg,
+#ffb6d9,
+#87cefa,
+#ffd84d
+);
+
+box-shadow:
+0 10px 25px rgba(0,0,0,.15);
+}
+
+.btn:hover{
+transform:translateY(-4px) scale(1.03);
+}
+
+.secondary{
+background:white;
+color:#ff9fcf;
+}
+
+/* GIFTS */
+
+.gifts{
+display:grid;
+grid-template-columns:repeat(2,minmax(220px,1fr));
+gap:24px;
+
+max-width:700px;
+margin:40px auto 0;
+}
+
+/* ALL CARDS SAME SIZE */
+
+.gift{
+height:220px;
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+padding:24px;
+
+border-radius:32px;
+
+background:rgba(255,255,255,.22);
+
+border:1px solid rgba(255,255,255,.35);
+
+backdrop-filter:blur(14px);
+
+cursor:pointer;
+
+transition:.35s;
+
+text-align:center;
+
+box-shadow:
+0 10px 25px rgba(0,0,0,.08);
+}
+
+.gift:hover{
+transform:translateY(-8px) scale(1.03);
+}
+
+.gift span{
+font-size:2.8rem;
+display:block;
+margin-bottom:14px;
+}
+
+.gift p{
+font-size:1rem;
+font-weight:700;
+margin:0;
+color:#5b3b00;
+}
+
+/* LAST CARD CENTER */
+
+.gift:last-child{
+grid-column:1 / span 2;
+max-width:340px;
+width:100%;
+justify-self:center;
+}
+
+/* VIDEO */
+
+.videoFrame{
+margin-top:25px;
+
+padding:10px;
+
+border-radius:38px;
+
+background:
+linear-gradient(
+135deg,
+#ffb6d9,
+#87cefa,
+#ffd84d
+);
+
+box-shadow:
+0 0 30px rgba(255,255,255,.2),
+0 15px 35px rgba(0,0,0,.18);
+
+max-width:750px;
+margin-inline:auto;
+}
+
+.videoFrame video{
+width:100%;
+height:520px;
+display:block;
+border-radius:30px;
+object-fit:contain;
+background:#000;
+}
+
+.videoCaption{
+text-align:center;
+color:white;
+font-size:1rem;
+font-weight:600;
+padding:16px 12px 8px;
+line-height:1.8;
+}
+
+/* TEXTAREA */
+
+textarea{
+width:100%;
+height:140px;
+
+margin-top:24px;
+
+border:none;
+outline:none;
+
+resize:none;
+
+padding:22px;
+
+border-radius:28px;
+
+font-family:'Poppins';
+
+background:rgba(255,255,255,.22);
+
+border:1px solid rgba(255,255,255,.4);
+
+backdrop-filter:blur(10px);
+
+color:#5b3b00;
+
+font-size:1rem;
+font-weight:600;
+}
+
+textarea::placeholder{
+color:#8c6500;
+}
+
+/* MOBILE FIXED PERFECT LAYOUT */
+
+@media(max-width:900px){
+
+.hero{
+display:flex;
+flex-direction:column;
+align-items:center;
+text-align:center;
+gap:22px;
+}
+
+/* LEFT SECTION */
+
+.left{
+width:100%;
+display:flex;
+flex-direction:column;
+align-items:center;
+}
+
+/* IMAGE SECTION */
+
+.right{
+width:100%;
+display:flex;
+justify-content:center;
+order:3;
+}
+
+/* ORDER FIX */
+
+.tag{
+order:1;
+}
+
+h1{
+order:2;
+font-size:3.8rem;
+line-height:1.1;
+}
+
+.marathi{
+order:2;
+margin-bottom:10px;
+}
+
+/* IMAGE CENTER */
+
+.imageCard{
+max-width:340px;
+margin:auto;
+}
+
+/* TEXT BELOW IMAGE */
+
+p{
+order:4;
+max-width:95%;
+}
+
+/* QUOTE */
+
+.quote-box{
+order:5;
+max-width:95%;
+}
+
+/* BUTTONS */
+
+.btnRow{
+order:6;
+justify-content:center;
+width:100%;
+}
+
+.img{
+height:420px;
+}
+
+/* FLOAT CARD */
+
+.floatBottom{
+position:relative;
+right:auto;
+bottom:auto;
+margin-top:14px;
+}
+
+}
+
+/* SMALL MOBILE */
+
+@media(max-width:700px){
+
+.gifts{
+grid-template-columns:1fr;
+max-width:350px;
+}
+
+.gift{
+height:190px;
+}
+
+.gift:last-child{
+grid-column:auto;
+max-width:none;
+}
+
+}
+
+@media(max-width:500px){
+
+#app{
+padding:22px;
+border-radius:35px;
+}
+
+.hero{
+gap:18px;
+}
+
+.imageCard{
+max-width:100%;
+}
+
+.img{
+height:360px;
+border-radius:24px;
+}
+
+h1{
+font-size:2.8rem;
+line-height:1.1;
+}
+
+p{
+font-size:1rem;
+line-height:1.7;
+}
+
+.marathi{
+font-size:1rem;
+}
+
+.btn{
+width:100%;
+padding:15px 20px;
+}
+
+.btnRow{
+flex-direction:column;
+gap:14px;
+}
+
+.videoFrame video{
+height:320px;
+}
+
+.videoCaption{
+font-size:.95rem;
+padding:14px 10px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="sky">
+
+<div class="sun"></div>
+
+<div class="cloud cloud1"></div>
+<div class="cloud cloud2"></div>
+<div class="cloud cloud3"></div>
+
+</div>
+
+<div class="particles" id="particles"></div>
+
+<div id="app">
+
+<!-- PAGE 1 -->
+
+<div class="page active" id="p1">
+
+<div class="hero">
+
+<div class="left">
+
+<div class="tag">
+☁️ A Little Universe Made For Isha
+</div>
+
+<h1>Hey Isha ✨</h1>
+
+<div class="marathi">
+तुझ्यासारखी मैत्रीण खूप rare असते ✨
+</div>
+
+</div>
+
+<div class="right">
+
+<div class="imageCard">
+
+<img src="https://i.ibb.co/Mxp4K80B/download-1.jpg" class="img coverImg">
+
+<div class="floatCard floatBottom"><b>
+🎀 Golden Soul 
+Rare people feel this special.🎀</b>
+</div>
+
+</div>
+
+</div>
+
+<div class="left">
+
+<p>
+Some people become memories.<br>
+But you became comfort, peace and a part of the sky itself 💛
+</p>
+
+<div class="quote-box">
+This whole little world was designed only for you ☁️✨
+</div>
+
+<div class="btnRow firstBtnRow">
+
+<button class="btn" onclick="nextPage('p2')">
+Enter Your Sky ✨
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- PAGE 2 -->
+
+<div class="page" id="p2">
+
+<div class="hero">
+
+<div class="left">
+
+<div class="tag">
+🎂 Birthday Magic
+</div>
+
+<h1>Happy Birthday 💖</h1>
+
+</div>
+
+<div class="right">
+
+<div class="imageCard">
+
+<img src="https://i.ibb.co/mFSybNdP/flowers.jpg" class="img coverImg">
+
+</div>
+
+</div>
+
+<div class="left">
+
+<p>
+You deserve peaceful mornings,<br>
+warm sunsets and endless happiness ☁️
+</p>
+
+<div class="quote-box">
+"Some people become memories.<br>
+But you became peace." ✨
+</div>
+
+<div class="btnRow">
+
+<button class="btn" onclick="nextPage('p3')">
+Continue The Magic ✨
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- PAGE 3 -->
+
+<div class="page" id="p3">
+
+<div class="hero">
+
+<div class="left">
+
+<div class="tag">
+😌 Truth Time
+</div>
+
+<h1>You Know? 💫</h1>
+
+</div>
+
+<div class="right">
+
+<div class="imageCard">
+
+<img src="https://i.ibb.co/rG5xmC4F/download-3.jpg" class="img coverImg">
+
+</div>
+
+</div>
+
+<div class="left">
+
+<p>
+Do you know how special you are?<br>
+Because some people just make life feel lighter ☁️
+</p>
+
+<div class="btnRow">
+
+<button class="btn" onclick="nextPage('p4')">
+YES OBVIOUSLY 💅
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- PAGE 4 -->
+
+<div class="page" id="p4">
+
+<div class="tag">
+🎁 Choose A Memory
+</div>
+
+<h1>Open Your Surprises ✨</h1>
+
+<div class="gifts">
+
+<div class="gift" onclick="nextPage('g1')">
+<span>💌</span>
+<p>Letter</p>
+</div>
+
+<div class="gift" onclick="nextPage('g2')">
+<span>☁️</span>
+<p>Bestie</p>
+</div>
+
+<div class="gift" onclick="nextPage('g3')">
+<span>✨</span>
+<p>Princess</p>
+</div>
+
+<div class="gift" onclick="nextPage('videoGift')">
+<span>🎥</span>
+<p>Video</p>
+</div>
+
+<div class="gift" onclick="nextPage('wish')">
+<span>🌙</span>
+<p>Make A Wish</p>
+</div>
+
+</div>
+
+</div>
+
+<!-- LETTER -->
+
+<div class="page" id="g1">
+
+<div class="hero">
+
+<div class="left">
+
+<div class="tag">
+💌 Letter
+</div>
+
+<h1>Dear Isha 💖</h1>
+
+</div>
+
+<div class="right">
+
+<div class="imageCard">
+
+<img src="https://i.ibb.co/ZzcK84w7/Whats-App-Image-2026-05-11-at-1-52-26-PM.jpg" class="img coverImg">
+
+</div>
+
+</div>
+
+<div class="left">
+
+<div class="quote-box">
+Thank you for existing.<br>
+Life genuinely feels softer with you around ☁️
+</div>
+
+<div class="btnRow">
+<button class="btn secondary" onclick="nextPage('p4')">
+Back
+</button>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- BESTIE -->
+
+<div class="page" id="g2">
+
+<div class="hero">
+
+<div class="left">
+
+<div class="tag">
+☁️ Bestie Energy
+</div>
+
+<h1>Bestie Energy ✨</h1>
+
+</div>
+
+<div class="right">
+
+<div class="imageCard">
+
+<img src="https://i.ibb.co/Nd2cJqkv/Screenshot-2026-05-11-183819.png" class="img fullImg">
+
+</div>
+
+</div>
+
+<div class="left">
+
+<div class="quote-box">
+"You deserve peaceful mornings,<br>
+soft nights and endless happiness." 💖
+</div>
+
+<div class="btnRow">
+<button class="btn secondary" onclick="nextPage('p4')">
+Back
+</button>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- PRINCESS -->
+
+<div class="page" id="g3">
+
+<div class="hero">
+
+<div class="left">
+
+<div class="tag">
+👑 Main Character
+</div>
+
+<h1>Main Character ☁️</h1>
+
+</div>
+
+<div class="right">
+
+<div class="imageCard">
+
+<img src="https://i.ibb.co/HLckXSgN/Screenshot-2026-05-11-134019.png" class="img coverImg">
+
+</div>
+
+</div>
+
+<div class="left">
+
+<div class="quote-box">
+You are beautiful.<br>
+You are lovable.<br>
+You are unforgettable. 💖
+</div>
+
+<div class="btnRow">
+<button class="btn secondary" onclick="nextPage('p4')">
+Back
+</button>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- VIDEO -->
+
+<div class="page" id="videoGift">
+
+<div class="tag">
+🎥 <b>just her being her</b>
+</div>
+
+<h1>Your Special Moments 🎀</h1>
+
+<div class="videoFrame">
+
+<video
+id="memoryVideo"
+autoplay
+muted
+loop
+playsinline
+controls>
+
+<source src="isha.mp4" type="video/mp4">
+
+</video>
+
+<div class="videoCaption">
+You are built from sunshine, chaos and pretty smiles ☀️✨
+</div>
+
+</div>
+
+<div class="btnRow">
+
+<button class="btn secondary" onclick="nextPage('p4')">
+Back
+</button>
+
+</div>
+
+</div>
+
+<!-- WISH -->
+
+<div class="page" id="wish">
+
+<div class="tag">
+🌌 Make A Wish
+</div>
+
+<h1>Send It To The Sky ✨</h1>
+
+<div class="quote-box">
+Write something your heart wants ☁️
+</div>
+
+<textarea placeholder="I wish for..."></textarea>
+
+<div class="btnRow">
+
+<button class="btn" onclick="sendWish()">
+Send To The Sky ✨
+</button>
+
+</div>
+
+</div>
+
+<!-- FINAL -->
+
+<div class="page" id="final">
+
+<div class="hero">
+
+<div class="left">
+
+<div class="tag">
+🌙 Wish Accepted
+</div>
+
+<h1>The Sky Heard You ✨</h1>
+
+</div>
+
+<div class="right">
+
+<div class="imageCard">
+
+<img src="https://i.ibb.co/V0d7sF59/download-11.jpg" class="img fullImg">
+
+</div>
+
+</div>
+
+<div class="left">
+
+<div class="quote-box">
+"The sky heard your wish tonight." ☁️💖
+</div>
+
+<div class="btnRow">
+
+<button class="btn secondary" onclick="nextPage('p1')">
+Restart Magic ✨
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+/* PARTICLES */
+
+function createParticles(){
+
+const particles = document.getElementById("particles");
+
+setInterval(()=>{
+
+const spark = document.createElement("div");
+
+spark.classList.add("spark");
+
+spark.innerHTML =
+["💖","☁️","✨","🩵","🌸","⭐"][Math.floor(Math.random()*6)];
+
+spark.style.left =
+Math.random()*100 + "vw";
+
+spark.style.fontSize =
+(Math.random()*20+14)+"px";
+
+const colors = [
+"#ffb6d9",
+"#ffd7ec",
+"#87cefa",
+"#ffffff"
+];
+
+spark.style.color =
+colors[Math.floor(Math.random()*colors.length)];
+
+spark.style.animationDuration =
+(Math.random()*4+5)+"s";
+
+particles.appendChild(spark);
+
+setTimeout(()=>{
+spark.remove();
+},8000);
+
+},180);
+
+}
+
+createParticles();
+
+/* PAGE */
+
+function nextPage(id){
+
+document.querySelectorAll(".page").forEach(page=>{
+page.classList.remove("active");
+});
+
+document.getElementById(id).classList.add("active");
+
+const video = document.getElementById("memoryVideo");
+
+if(video){
+
+if(id === "videoGift"){
+video.play().catch(()=>{});
+}else{
+video.pause();
+video.currentTime = 0;
+}
+
+}
+
+confetti({
+particleCount:140,
+spread:90,
+origin:{y:0.6},
+colors:['#ffb6d9','#87cefa','#ffd84d','#ffffff']
+});
+
+window.scrollTo(0,0);
+
+}
+
+/* WISH */
+
+/* WISH */
+
+async function sendWish(){
+
+const text = document.querySelector("textarea").value;
+
+if(text.trim() === ""){
+alert("Write a wish first ✨");
+return;
+}
+
+/* SHOW SUCCESS IMMEDIATELY */
+
+confetti({
+particleCount:250,
+spread:120,
+colors:['#ffb6d9','#87cefa','#ffd84d','#ffffff']
+});
+
+document.querySelector("textarea").value = "";
+
+nextPage("final");
+
+/* SEND IN BACKGROUND */
+
+fetch(
+"https://script.google.com/macros/s/AKfycbyRj9dxghVJ1rManPcF-cVkxhwn3V6zyy5piAqBwf0tJcnj-bi6BvhKc-ztSnzTNp9xPA/exec",
+{
+method:"POST",
+mode:"no-cors",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+wish:text
+})
+
+}
+).catch(err=>console.error(err));
+
+}
+</script>
+
+</body>
+</html>
